@@ -1,0 +1,28 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - checkout
+      - run:
+        name: Install dependencies
+        command: . build/install.sh
+      - run:
+        name: Create a scratch org
+        command: . build/create-scratch-org.sh
+      - run:
+        name: Validate components and run tests
+        command: . build/test.sh
+      - store_test_results:
+        path: test-results
+
+workflows:
+  version: 2
+  validate: 
+    jobs:
+      - build:
+        filter:
+          branches:
+            ignore:
+              - master
