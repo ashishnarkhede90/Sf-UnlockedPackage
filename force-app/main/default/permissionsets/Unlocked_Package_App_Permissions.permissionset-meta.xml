@@ -37,6 +37,10 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <tabSettings>
+        <tab>Account_Locator</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
         <tab>Appointment__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
