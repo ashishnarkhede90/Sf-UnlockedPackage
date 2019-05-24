@@ -16,13 +16,12 @@ jobs:
         command: . build/test.sh
       - store_test_results:
         path: test-results
-
 workflows:
   version: 2
   validate: 
     jobs:
       - build:
-        filter:
-          branches:
-            ignore:
-              - master
+          filters:
+            branches:
+              ignore:
+                - master
